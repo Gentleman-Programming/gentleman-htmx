@@ -1,0 +1,16 @@
+doctype html
+html(lang='en')
+  head
+    title Gentleman Htmx Test
+    script(src='https://unpkg.com/htmx.org@1.9.10')
+    style.
+      body {padding: 20px}
+  body
+    h1 Gentleman Htmx
+    form(hx-post='/submit' hx-target='#users' hx-swap="beforeend")
+      input(type='text', name='name', placeholder='Enter your name')
+      input(type='number', name='age', placeholder='Enter your age')
+      button(type='submit') Submit
+    ul(id='users' htmx-target='closest li' )
+      each user in users
+        li #{user.name}
