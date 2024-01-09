@@ -11,6 +11,6 @@ html(lang='en')
       input(type='text', name='name', placeholder='Enter your name')
       input(type='number', name='age', placeholder='Enter your age')
       button(type='submit') Submit
-    ul(id='users' htmx-target='closest li' )
+    ul(id='users' hx-target='closest li' hx-swap="outerHTML swap:0.5s")
       each user in users
-        li #{user.name}
+        include components/userItem

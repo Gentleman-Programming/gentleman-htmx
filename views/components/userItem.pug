@@ -1,0 +1,4 @@
+li 
+  div 
+    span #{user.name}
+    button(hx-confirm="Are you sure?" hx-delete=`/delete/${user.id}`) Delete

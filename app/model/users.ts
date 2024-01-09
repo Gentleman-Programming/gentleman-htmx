@@ -1,6 +1,6 @@
-const { Model, DataTypes } = require("sequelize");
+import { Model, DataTypes } from "sequelize";
 
-const sequelize = require("../model/dbconfig");
+import sequelize from "../model/dbconfig";
 
 class Users extends Model {}
 
@@ -8,6 +8,7 @@ Users.init(
   {
     id: {
       type: DataTypes.INTEGER,
+      autoIncrement: true,
       primaryKey: true,
     },
     name: {
@@ -24,4 +25,4 @@ Users.init(
   },
 );
 
-module.exports = Users;
+export default Users;

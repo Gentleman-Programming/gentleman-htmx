@@ -1,4 +1,4 @@
-const { Sequelize } = require("sequelize");
+import { Sequelize } from "sequelize";
 
 const persistent_path = process.env.PERSISTENT_STORAGE_DIR || ".";
 
@@ -7,4 +7,4 @@ const sequelize = new Sequelize("gentleman-db", "user", "pass", {
   host: persistent_path + "/dev.sqlite",
 });
 
-module.exports = sequelize;
+export default sequelize;
